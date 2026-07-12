@@ -1,0 +1,142 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏠</text></svg>"><title>Flex аналоги в верстке: Grid, Float и таблицы — Кровельщик</title><meta name="description" content="Обзор альтернатив CSS Flexbox: Grid Layout, плавающие блоки, таблицы. Сравнение подходов, сценарии использования и совместимость.">
+<meta name="robots" content="index, follow"><link rel="canonical" href="https://krovelshik.vercel.app/articles/f/fl/flex-analogi.html">
+<meta property="og:type" content="article"><meta property="og:title" content="Flex аналоги в верстке: Grid, Float и таблицы — Кровельщик">
+<meta property="og:description" content="Обзор альтернатив CSS Flexbox: Grid Layout, плавающие блоки, таблицы. Сравнение подходов, сценарии использования и совместимость."><meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://krovelshik.vercel.app/articles/f/fl/flex-analogi.html"><meta property="og:site_name" content="Кровельщик">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Flex аналоги в верстке: Grid, Float и таблицы — Кровельщик">
+<meta name="twitter:description" content="Обзор альтернатив CSS Flexbox: Grid Layout, плавающие блоки, таблицы. Сравнение подходов, сценарии использования и совместимость.">
+<link rel="stylesheet" href="/static/css/style.css?v=1783828002"><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "@id": "https://krovelshik.vercel.app/articles/f/fl/flex-analogi.html#article", "headline": "Flex аналоги: когда и чем заменить Flexbox", "description": "Обзор альтернатив CSS Flexbox: Grid Layout, плавающие блоки, таблицы. Сравнение подходов, сценарии использования и совместимость.", "url": "https://krovelshik.vercel.app/articles/f/fl/flex-analogi.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://krovelshik.vercel.app/articles/f/fl/flex-analogi.html"}, "publisher": {"@type": "Organization", "name": "Кровельщик", "url": "https://krovelshik.vercel.app/"}}, {"@type": "BreadcrumbList", "@id": "https://krovelshik.vercel.app/articles/f/fl/flex-analogi.html#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://krovelshik.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Инструменты и крепеж", "item": "https://krovelshik.vercel.app/category/instrumenty-i-krepezh/"}, {"@type": "ListItem", "position": 3, "name": "Flex аналоги: когда и чем заменить Flexbox", "item": "https://krovelshik.vercel.app/articles/f/fl/flex-analogi.html"}]}, {"@type": "FAQPage", "@id": "https://krovelshik.vercel.app/articles/f/fl/flex-analogi.html#faq", "mainEntity": [{"@type": "Question", "name": "Можно ли полностью заменить Flexbox на Grid?", "acceptedAnswer": {"@type": "Answer", "text": "Технически Grid может выполнить почти все задачи Flexbox, включая одномерное выравнивание. Однако синтаксис Grid для простых задач (например, центрирование одного элемента) может быть избыточным. Flexbox остается более интуитивным для распределения пространства в одной строке или колонке."}}, {"@type": "Question", "name": "Почему таблицы считаются устаревшими для макетов?", "acceptedAnswer": {"@type": "Answer", "text": "Таблицы предназначены для представления данных, а не для структуры страницы. Использование их для верстки нарушает семантику HTML, усложняет поддержку кода и создает проблемы с доступностью. Кроме того, таблицы трудно адаптировать под мобильные экраны без потери читаемости."}}, {"@type": "Question", "name": "Как убрать отступы между inline-block элементами?", "acceptedAnswer": {"@type": "Answer", "text": "Отступы возникают из-за пробельных символов в HTML-коде. Решения включают: удаление переносов строк между тегами, установку font-size: 0 на родителе, использование отрицательных margin или переход на Flexbox, который игнорирует пробелы в разметке."}}, {"@type": "Question", "name": "Поддерживает ли Internet Explorer CSS Grid?", "acceptedAnswer": {"@type": "Answer", "text": "IE11 поддерживает устаревшую версию спецификации Grid с префиксом -ms-. Синтаксис отличается от современного стандарта (например, использование -ms-grid-rows вместо grid-template-rows). Для полной совместимости часто требуется написание дублирующего кода или использование автопрефиксеров."}}, {"@type": "Question", "name": "Когда лучше использовать absolute позиционирование?", "acceptedAnswer": {"@type": "Answer", "text": "Absolute идеально подходит для элементов, которые должны игнорировать поток документа: всплывающие окна, иконки уведомлений, декоративные фоны или элементы, требующие точного наложения поверх другого контента. Для основных блоков контента этот метод не рекомендуется."}}]}]}</script></head>
+<body class="pc-body pc-article-body" data-page-type="article" data-ads="on"><a class="pc-skip" href="#article">К статье</a>
+<button class="pc-menu-button" type="button" aria-controls="siteSidebar" aria-expanded="false" data-menu-button><span aria-hidden="true"></span><span>Разделы</span></button>
+<div class="pc-sidebar-shade" data-sidebar-shade></div><aside class="pc-sidebar" id="siteSidebar" aria-label="Навигация по сайту">
+<div class="pc-sidebar-top"><a class="pc-brand" href="/"><span class="pc-brand-mark">🏠</span><span><strong>Кровельщик</strong><small>Полное руководство по выбору материалов, монтажу кровли, утеплению и отделке частного дома.</small></span></a>
+<div class="pc-search" role="search"><label class="pc-visually-hidden" for="globalSearchInput">Поиск</label><input id="globalSearchInput" type="search" placeholder="Найти решение" autocomplete="off"><div class="search-dropdown" id="globalSearchDropdown"></div></div>
+<nav class="pc-section-nav" aria-label="Разделы"><p class="pc-nav-label">Темы</p><a class="" href="/category/montazh-krovli/"><span>01</span>Монтаж кровли</a><a class="" href="/category/vidy-krovli/"><span>02</span>Виды кровли</a><a class="" href="/category/uteplenie-doma/"><span>03</span>Утепление дома</a><a class="" href="/category/fasad-i-sajding/"><span>04</span>Фасад и сайдинг</a><a class="" href="/category/gidroizolyatsiya/"><span>05</span>Гидроизоляция</a><a class="" href="/category/stropilnaya-sistema/"><span>06</span>Стропильная система</a><a class="" href="/category/remont-i-ukhod/"><span>07</span>Ремонт и уход</a><a class="" href="/category/zabory-i-ograzhdeniya/"><span>08</span>Заборы и ограждения</a><a class="" href="/category/vnutrennyaya-otdelka/"><span>09</span>Внутренняя отделка</a><a class="" href="/category/banya-i-terrasa/"><span>10</span>Баня и терраса</a><a class="is-active" href="/category/instrumenty-i-krepezh/"><span>11</span>Инструменты и крепеж</a><a class="" href="/category/raschety-i-smety/"><span>12</span>Расчеты и сметы</a><a class="" href="/category/bezopasnost/"><span>13</span>Безопасность</a><a class="" href="/category/drugoe/"><span>14</span>Другое</a></nav></div>
+<div class="pc-sidebar-bottom"><a href="/about.html">О проекте</a><a href="/contact.html">Контакты</a><a href="/privacy.html">Конфиденциальность</a><p>Кровельщик · Справочные материалы</p></div></aside>
+<main class="pc-main"><div class="pc-topline"><nav class="pc-breadcrumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span>/</span><a href="/category/instrumenty-i-krepezh/">Инструменты и крепеж</a></nav><span class="pc-updated">Практический материал</span></div>
+<article class="pc-article" id="article"><header class="pc-article-header"><div class="pc-article-heading"><p class="pc-kicker"><span>Инструменты и крепеж</span> · 9 мин</p><h1>Flex аналоги: когда и чем заменить Flexbox</h1><p class="pc-deck">Обзор альтернатив CSS Flexbox: Grid Layout, плавающие блоки, таблицы. Сравнение подходов, сценарии использования и совместимость.</p></div>
+<aside class="pc-brief" aria-label="Краткий ответ"><p>Краткий ответ</p><strong>Короткий вывод</strong><span>Основной аналог Flexbox — CSS Grid Layout для сложных сеток. Для табличных данных используйте теги table, а для легаси-кода — float. Выбор зависит от задачи: одномерное или двумерное выравнивание.</span></aside></header>
+<div class="pc-byline"><div class="pc-author-mark">К</div><div><strong>Кровельщик</strong><span>Инструменты и крепеж</span></div><p>Справочный материал</p></div>
+<div class="pc-ad-slot" data-slot="article_before" aria-hidden="true"></div><nav class="pc-toc" aria-label="Содержание"><p>В этом материале</p><ol><li><a href="#grid-layout-как-мощная-альтернатива">Grid Layout как мощная альтернатива</a></li><li><a href="#табличная-верстка-для-специфических-задач">Табличная верстка для специфических задач</a></li><li><a href="#плавающие-блоки-и-их-ограничения">Плавающие блоки и их ограничения</a></li><li><a href="#абсолютное-позиционирование-в-потоке">Абсолютное позиционирование в потоке</a></li><li><a href="#многоколоночная-верстка-текста">Многоколоночная верстка текста</a></li><li><a href="#inline-block-для-простых-рядов">Inline-block для простых рядов</a></li><li><a href="#совместимость-и-производительность">Совместимость и производительность</a></li></ol></nav>
+<div class="pc-prose"><p>Flexbox стал стандартом для одномерного выравнивания элементов в веб-разработке, обеспечивая адаптивность и контроль над распределением пространства. Однако существуют ситуации, когда использование этой технологии нецелесообразно или невозможно из-за требований к поддержке устаревших браузеров и специфических задач верстки.</p>
+
+<p>Альтернативные методы, такие как CSS Grid, табличная верстка и плавающие блоки, предлагают иные подходы к компоновке макетов. Grid Layout превосходит Flexbox в работе с двумерными сетками, а таблицы остаются единственным надежным решением для строгого табличного представления данных, не подверженного случайным переносам строк.</p>
+
+<p>Выбор конкретного инструмента зависит от архитектуры проекта, требований к кроссбраузерности и типа контента. Понимание ограничений и преимуществ каждого метода позволяет разработчику создавать устойчивые интерфейсы, которые корректно отображаются на любых устройствах и в любых средах выполнения.</p>
+
+
+
+<section class="pc-compare"><h3>Сравнение вариантов</h3><div><div><strong>CSS Grid</strong><p>Идеален для двумерных сеток (строки и колонки одновременно). Сложнее в освоении, чем Flex.</p></div><div><strong>HTML Tables</strong><p>Подходит только для табличных данных. Не рекомендуется для макетирования страниц.</p></div><div><strong>Float</strong><p>Устаревший метод обтекания. Требует очистки потоков (clearfix). Плохо подходит для центрирования.</p></div></div></section>
+
+<h2 id="grid-layout-как-мощная-альтернатива">Grid Layout как мощная альтернатива</h2>
+
+<p>CSS Grid Layout представляет собой систему двумерной верстки, которая работает как со строками, так и с колонками одновременно. В отличие от Flexbox, который ориентирован на одну ось, Grid позволяет размещать элементы в ячейках сетки, определяя их точное положение и размер.</p>
+
+<p>Этот метод особенно эффективен при создании сложных макетов страниц, где необходимо жестко зафиксировать расположение шапки, боковой панели и основного контента. Свойства grid-template-columns и grid-template-rows дают полный контроль над структурой без необходимости вложения множества контейнеров друг в друга.</p>
+
+<p>Однако поддержка старых браузеров, таких как Internet Explorer 10 и 11, в Grid ограничена и требует использования префиксов или специфических синтаксических конструкций. Для современных проектов это не является проблемой, но при поддержке легаси-систем стоит учитывать необходимость фолбэков.</p>
+
+<div class="pc-code"><span>css</span><pre><code>.container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+}</code></pre></div>
+
+<h2 id="табличная-верстка-для-специфических-задач">Табличная верстка для специфических задач</h2>
+
+<p>Несмотря на то, что использование таблиц для макетирования страниц считается дурным тоном в современном вебе, они остаются незаменимыми для отображения структурированных данных. Таблицы гарантируют, что заголовки столбцов всегда будут строго над соответствующими ячейками данных, чего сложно добиться на чистом CSS при динамическом контенте.</p>
+
+<p>Свойство display: table позволяет имитировать поведение таблиц без использования семантических тегов table, tr и td. Это может быть полезно для создания блоков одинаковой высоты, которые автоматически растягиваются по содержимому самого высокого элемента в ряду.</p>
+
+<p>Главным недостатком табличного подхода является сложность адаптации под мобильные устройства. Таблицы плохо сжимаются и часто требуют горизонтальной прокрутки или полной перестройки структуры через медиа-запросы, что усложняет поддержку кода.</p>
+
+<aside class="pc-callout pc-callout--warning"><span class="pc-callout-sign" aria-hidden="true">!</span><div><strong>Когда нужно остановиться</strong><p>Не используйте таблицы (display: table) для создания общих макетов страниц. Это нарушает семантику, ухудшает доступность для скринридеров и усложняет адаптивную верстку.</p></div></aside>
+
+<div class="pc-ad-slot" data-slot="article_mid_1" aria-hidden="true"></div><h2 id="плавающие-блоки-и-их-ограничения">Плавающие блоки и их ограничения</h2>
+
+<p>Механизм float исторически использовался для создания многоколоночных макетов до появления Flexbox и Grid. Элементы с этим свойством вынимаются из нормального потока документа и прижимаются к левой или правой стороне контейнера, позволяя тексту обтекать их.</p>
+
+<p>Основная проблема использования float заключается в необходимости очистки потока (clearfix). Родительский контейнер не осознает высоту плавающих элементов, что приводит к схлопыванию фона и границ, если не применить специальные хаки или псевдоэлементы для сброса.</p>
+
+<p>Центрирование элементов с помощью float крайне затруднительно и требует вычислений ширины или использования дополнительных обертке. В современных проектах этот метод следует применять только для задач обтекания текста изображениями, где он работает наиболее предсказуемо.</p>
+
+
+
+<aside class="pc-inline-related"><div class="pc-inline-related-head"><span>Также по теме</span><strong>Возможно, пригодится</strong></div><div class="pc-inline-related-links"><a href="/articles/s/sk/skolko-sokhnet-prozrachnyj-silikonovyj-germetik.html"><span>01</span><strong>Сколько сохнет прозрачный силиконовый герметик</strong><small>11 мин →</small></a><a href="/articles/t/te/temperatura-khraneniya-montazhnoj-peny.html"><span>02</span><strong>Правила температурного хранения монтажной пены</strong><small>14 мин →</small></a><a href="/articles/k/kr/krepleniya-dlya-livnevki-na-kryshe.html"><span>03</span><strong>Крепления для ливневки на крыше: выбор и монтаж</strong><small>9 мин →</small></a></div></aside><h2 id="абсолютное-позиционирование-в-потоке">Абсолютное позиционирование в потоке</h2>
+
+<p>Позиционирование absolute вырывает элемент из потока и размещает его относительно ближайшего позиционированного предка. Этот метод часто используется для наложения элементов друг на друга, создания всплывающих подсказок или размещения бейджей поверх иконок.</p>
+
+<p>В отличие от Flexbox, абсолютное позиционирование не учитывает размеры соседних элементов. Размещенный блок может перекрыть важный контент, если не рассчитать координаты заранее. Это делает метод непригодным для создания основных структурных блоков страницы.</p>
+
+<p>Тем не менее, в сочетании с relative на родителе, absolute позволяет создавать сложные декоративные эффекты и сетки, где элементы должны игнорировать стандартное распределение пространства. Это мощный инструмент для точечных задач, но не для глобальной компоновки.</p>
+
+<aside class="pc-callout pc-callout--note"><span class="pc-callout-sign" aria-hidden="true">!</span><div><strong>Важно</strong><p>Элемент с position: absolute не занимает места в потоке документа. Соседние элементы ведут себя так, будто его не существует, что может привести к наложениям.</p></div></aside>
+
+<h2 id="многоколоночная-верстка-текста">Многоколоночная верстка текста</h2>
+
+<p>Свойство column-count и column-width из спецификации CSS Multi-column Layout Module предназначено для разбивки текста на колонки, подобно газетной верстке. Это не является полным аналогом Flexbox, но решает задачу распределения контента по вертикали.</p>
+
+<p>Данный метод автоматически переносит контент из одной колонки в другую по мере заполнения. Это удобно для длинных списков, глоссариев или статей, где важно сохранить логическую последовательность чтения сверху вниз, а затем слева направо.</p>
+
+<p>Ограничением подхода является сложность контроля за высотой колонок и невозможность легко выровнять элементы по горизонтали между разными колонками. Разрывы колонок могут происходить в неудобных местах, нарушая целостность абзацев или списков.</p>
+
+<section class="pc-decision"><div class="pc-decision-head"><span>Маршрут решения</span><h3>Как выбрать действие</h3></div><div class="pc-decision-grid"><div class="pc-decision-row"><span>Нужно разбить длинный список на 3 колонки</span><strong>Используйте column-count: 3 вместо flex-wrap.</strong></div><div class="pc-decision-row"><span>Требуется строгая сетка товаров с карточками</span><strong>Используйте Grid или Flexbox, но не column-count.</strong></div></div></section>
+
+<div class="pc-ad-slot" data-slot="article_mid_2" aria-hidden="true"></div><h2 id="inline-block-для-простых-рядов">Inline-block для простых рядов</h2>
+
+<p>Значение display: inline-block позволяет элементам выстраиваться в строку, сохраняя возможность задания ширины, высоты и отступов. Это простой способ создания горизонтальных меню или галерей без использования современных спецификаций CSS.</p>
+
+<p>Главной особенностью inline-block является чувствительность к пробелам и переносам строк в HTML-коде. Между элементами появляются небольшие отступы, которые приходится устранять через обнуление font-size у родителя или удаление пробелов в разметке.</p>
+
+<p>Выравнивание по вертикали в этом режиме управляется свойством vertical-align, которое работает иначе, чем align-items во Flexbox. Это может вызвать неожиданные сдвиги базовой линии текста, если не настроено явно для всех элементов в ряду.</p>
+
+<div class="pc-fact-grid" aria-label="Как оценить ситуацию"><div><span>Наличие пробелов</span><strong>Лишние отступы между блоками</strong><p>Проверьте HTML на наличие переносов строк между тегами</p></div><div><span>Высота элементов</span><strong>Разная высота ломает ряд</strong><p>Убедитесь, что vertical-align установлен в top или middle</p></div></div>
+
+<h2 id="совместимость-и-производительность">Совместимость и производительность</h2>
+
+<p>При выборе альтернативы Flexbox критически важно учитывать целевую аудиторию проекта. Grid Layout требует более новых браузеров, тогда как float и inline-block работают практически везде, включая очень старые мобильные устройства и специфические веб-вью.</p>
+
+<p>Производительность рендеринга у современных методов (Flex и Grid) обычно выше, так как браузеры оптимизируют их расчеты. Старые методы могут вызывать лишние перерисовки макета (reflow) при изменении размеров окна, что влияет на плавность прокрутки на слабых устройствах.</p>
+
+<p>Для проектов с высокими требованиями к доступности (a11y) семантически верный выбор метода верстки важен. Использование таблиц для данных и списков для навигации обеспечивает лучшую навигацию для пользователей скринридеров, чем универсальные div-контейнеры с Flex.</p>
+
+<section class="pc-verify"><div class="pc-verify-head"><span>Контрольные точки</span><h3>Как проверить результат</h3></div><div class="pc-verify-grid"><article class="pc-verify-card"><strong>Изменение размера окна</strong><div><span>Норма</span><p>Элементы перестраиваются без горизонтального скролла</p></div><div><span>Тревожный признак</span><p>Контент обрезается или накладывается друг на друга</p></div></article><article class="pc-verify-card"><strong>Отключение CSS</strong><div><span>Норма</span><p>Порядок элементов логичен</p></div><div><span>Тревожный признак</span><p>Элементы идут в хаотичном порядке из-за absolute</p></div></article></div></section>
+
+<details>
+<summary>Можно ли полностью заменить Flexbox на Grid?</summary>
+<p>Технически Grid может выполнить почти все задачи Flexbox, включая одномерное выравнивание. Однако синтаксис Grid для простых задач (например, центрирование одного элемента) может быть избыточным. Flexbox остается более интуитивным для распределения пространства в одной строке или колонке.</p>
+</details>
+
+<details>
+<summary>Почему таблицы считаются устаревшими для макетов?</summary>
+<p>Таблицы предназначены для представления данных, а не для структуры страницы. Использование их для верстки нарушает семантику HTML, усложняет поддержку кода и создает проблемы с доступностью. Кроме того, таблицы трудно адаптировать под мобильные экраны без потери читаемости.</p>
+</details>
+
+<details>
+<summary>Как убрать отступы между inline-block элементами?</summary>
+<p>Отступы возникают из-за пробельных символов в HTML-коде. Решения включают: удаление переносов строк между тегами, установку font-size: 0 на родителе, использование отрицательных margin или переход на Flexbox, который игнорирует пробелы в разметке.</p>
+</details>
+
+<details>
+<summary>Поддерживает ли Internet Explorer CSS Grid?</summary>
+<p>IE11 поддерживает устаревшую версию спецификации Grid с префиксом -ms-. Синтаксис отличается от современного стандарта (например, использование -ms-grid-rows вместо grid-template-rows). Для полной совместимости часто требуется написание дублирующего кода или использование автопрефиксеров.</p>
+</details>
+
+<details>
+<summary>Когда лучше использовать absolute позиционирование?</summary>
+<p>Absolute идеально подходит для элементов, которые должны игнорировать поток документа: всплывающие окна, иконки уведомлений, декоративные фоны или элементы, требующие точного наложения поверх другого контента. Для основных блоков контента этот метод не рекомендуется.</p>
+</details>
+
+<div class="pc-summary"><span>Итог</span><h2>Что важно запомнить</h2><p>Flexbox — лучший выбор для одномерных задач. Grid superior для сложных сеток. Таблицы — только для данных. Float и inline-block — для легаси или специфических случаев обтекания.</p></div></div><div class="pc-ad-slot" data-slot="article_after" aria-hidden="true"></div>
+<section class="pc-related" aria-labelledby="relatedTitle"><div class="pc-section-title"><span>Дальше по теме</span><h2 id="relatedTitle">Продолжить чтение</h2></div><div class="pc-related-grid"><a href="/articles/s/sk/skolko-sokhnet-prozrachnyj-silikonovyj-germetik.html"><span>11 мин</span><strong>Сколько сохнет прозрачный силиконовый герметик</strong><b>Читать ↗</b></a><a href="/articles/t/te/temperatura-khraneniya-montazhnoj-peny.html"><span>14 мин</span><strong>Правила температурного хранения монтажной пены</strong><b>Читать ↗</b></a><a href="/articles/k/kr/krepleniya-dlya-livnevki-na-kryshe.html"><span>9 мин</span><strong>Крепления для ливневки на крыше: выбор и монтаж</strong><b>Читать ↗</b></a><a href="/articles/k/ka/kak-pravilno-zarezat-brus.html"><span>8 мин</span><strong>Как правильно зарезать брус для строительства</strong><b>Читать ↗</b></a><a href="/articles/k/ka/kak-ustanovit-potolochnuyu-lestnitsu.html"><span>12 мин</span><strong>Как установить потолочную лестницу своими руками</strong><b>Читать ↗</b></a><a href="/articles/s/sk/skolko-vesit-gvozd.html"><span>11 мин</span><strong>Сколько весит гвоздь: точные данные по типоразмерам</strong><b>Читать ↗</b></a></div></section></article>
+<footer class="pc-landing-footer"><div class="pc-landing-footer-inner">
+<div class="pc-landing-footer-brand"><h2>Кровельщик</h2><p>Полное руководство по выбору материалов, монтажу кровли, утеплению и отделке частного дома.</p></div>
+<div class="pc-footer-links"><strong>Разделы</strong><a href="/category/montazh-krovli/">Монтаж кровли</a><a href="/category/vidy-krovli/">Виды кровли</a><a href="/category/uteplenie-doma/">Утепление дома</a><a href="/category/fasad-i-sajding/">Фасад и сайдинг</a><a href="/category/gidroizolyatsiya/">Гидроизоляция</a><a href="/category/stropilnaya-sistema/">Стропильная система</a></div>
+<div class="pc-footer-links"><strong>Проект</strong><a href="/about.html">О нас</a>
+<a href="/contact.html">Контакты</a><a href="/privacy.html">Конфиденциальность</a>
+<a href="/sitemap.xml">Карта сайта</a></div>
+<div class="pc-footer-base"><span>Кровельщик</span><span>Материалы носят справочный характер</span><div class="pc-counter-contract" data-counter="liveinternet" aria-hidden="true"></div></div>
+</div></footer></main>
+<div class="pc-cookie" data-cookie><p>Мы используем cookie, чтобы сайт работал стабильно.</p><button type="button" data-cookie-accept>Понятно</button></div>
+<script src="/static/js/main.js" defer></script><script src="/static/js/pack_c.js" defer></script><script src="/static/js/inject.js" defer></script></body></html>
